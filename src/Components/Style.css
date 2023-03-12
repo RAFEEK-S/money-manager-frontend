@@ -1,0 +1,12 @@
+
+
+.row{
+    display: flex;
+    
+    
+}
+
+.row button{
+    flex:1;
+    
+}
