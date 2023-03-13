@@ -37,7 +37,7 @@ function Savemoney() {
                     division : division,
                     date : date
                 }
-                 axios.post('https://money-manager-backend-rlq0.onrender.com/economy/add/', newMoney)
+                await axios.post('https://money-manager-backend-rlq0.onrender.com/economy/add/', newMoney)
                                 .then(res => console.log(res))
                                 window.location='/';
             }
@@ -53,7 +53,7 @@ function Savemoney() {
   return (
     <div className='container mt-5'>
         <h3>Create Income/Expenses</h3>
-        <form onSubmit={handleSubmit}>
+        
             
             <div className='mt-3'><select className="form-select" aria-label="Default select example" value={topic}
                 onChange={onChangeTopic}>
@@ -103,10 +103,10 @@ function Savemoney() {
                 </input>
                 </div>
                 <div>
-                <button type="submit" className="btn-btn-primary mt-3">Save</button>
+                <button onClick={handleSubmit} className="btn-btn-primary mt-3">Save</button>
 
             </div>
-        </form>
+        
        
     </div>
   )
