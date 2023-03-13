@@ -21,7 +21,7 @@ function Editmoney() {
 
     console.log('#############' +  id)
     const amount = async() => {
-     axios.get("http://localhost:5000/economy/" + id )
+     axios.get("https://money-manager-backend-rlq0.onrender.com/economy/" + id )
       .then((res)=> {
         console.log('#############' +res.data.topic)
         setTopic(res.data.topic)
@@ -61,7 +61,7 @@ function Editmoney() {
                   division : division,
                   date : date
               }
-              axios.post(`http://localhost:5000/economy/update/${id}`, money)
+              axios.post(`https://money-manager-backend-rlq0.onrender.com/economy/update/${id}`, money)
                               .then(res => console.log(res))
                               window.location='/';
           }

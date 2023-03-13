@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 useEffect(()=>{
           const balance = async() => {
-         await axios.get("http://localhost:5000/economy/")
+         await axios.get("https://money-manager-backend-rlq0.onrender.com/economy/")
           .then((res)=> {
             console.log(res.data)
             setData(res.data)
@@ -22,7 +22,7 @@ useEffect(()=>{
   console.log(data)
 
   const deletepost = async id =>{
-     await axios.delete(`http://localhost:5000/economy/delete/${id}`)
+     await axios.delete(`https://money-manager-backend-rlq0.onrender.com/economy/delete/${id}`)
       
         .then((res)=> console.log(res.data))
         .catch((err)=>console.log(err))

@@ -37,7 +37,7 @@ function Savemoney() {
                     division : division,
                     date : date
                 }
-                 axios.post('http://localhost:5000/economy/add/', newMoney)
+                 axios.post('https://money-manager-backend-rlq0.onrender.com/economy/add/', newMoney)
                                 .then(res => console.log(res))
                                 window.location='/';
             }
