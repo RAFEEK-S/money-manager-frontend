@@ -61,7 +61,7 @@ function Editmoney() {
                   division : division,
                   date : date
               }
-              axios.post(`https://money-manager-backend-rlq0.onrender.com/economy/update/${id}`, money)
+              await axios.post(`https://money-manager-backend-rlq0.onrender.com/economy/update/${id}`, money)
                               .then(res => console.log(res))
                               window.location='/';
           }
@@ -75,7 +75,7 @@ function Editmoney() {
   return (
     <div className='container mt-5'>
       <h3>Edit Income/Expenses</h3>
-        <form onSubmit={handleSubmit}>
+        
             
         <div className='mt-3'><select className="form-select" aria-label="Default select example" value={topic}
                 onChange={onChangeTopic}>
@@ -125,10 +125,10 @@ function Editmoney() {
                 </input>
                 </div>
 <div>
-                <button type="submit" className="btn-btn-primary mt-3">update</button>
+                <button onClick={handleSubmit} className="btn-btn-primary mt-3">update</button>
 
             </div>
-        </form>
+       
     </div>
   )
 }
